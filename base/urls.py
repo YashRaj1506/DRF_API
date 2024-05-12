@@ -8,8 +8,14 @@ urlpatterns = [
     # path('advocates/<str:username>/', views.advocate_details, name="advocates"),
     path('advocates/<str:username>/', views.AdvocateDetail.as_view(), name="advocates"),
     # path('add_advocate/')
+    path('companies/', views.companies_list),
+
+
 
 ]
+
+
+#comapnies
 
 
 #GET /advocates

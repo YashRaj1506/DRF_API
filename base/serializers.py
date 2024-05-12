@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Advocate
+from .models import Advocate, Company
 
 class AdvocateSerializer(ModelSerializer):
     class Meta:
@@ -7,6 +7,10 @@ class AdvocateSerializer(ModelSerializer):
         fields = '__all__'
 
         
+class CompanySerializer(ModelSerializer):
+    class Meta:
+        model = Company
+        fields = '__all__'        
 
         
 

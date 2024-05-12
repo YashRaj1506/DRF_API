@@ -5,8 +5,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.db.models import Q
 
-from .models import Advocate
-from .serializers import AdvocateSerializer
+from .models import Advocate, Company
+from .serializers import AdvocateSerializer,  CompanySerializer
 
 
 @api_view(['GET'])
@@ -112,3 +112,8 @@ def add_advocate(request):
     )
     return Response
 
+@api_view(['GET'])
+def companies_list(request):
+    companies = Company.objects.all()
+    serializer = CompanySerializer(companies, many = True)
+    return Response(serializer.data)
