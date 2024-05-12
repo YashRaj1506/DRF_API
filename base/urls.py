@@ -5,7 +5,7 @@ from .import views
 urlpatterns = [
     path('',views.endpoints),
     path('advocates/', views.advocate_list),
-    path('advocates/<str:username>/', views.advocate_details),
+    path('advocates/<str:username>/', views.advocate_details, name="advocates"),
     # path('add_advocate/')
 
 ]
